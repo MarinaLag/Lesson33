@@ -1,10 +1,7 @@
 package lesson_33._05_stream_terminal;
 
 import javax.swing.text.html.Option;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -28,7 +25,7 @@ public class Main {
                 new PricedCat("Cat1", 5, 500),
                 new PricedCat("Cat2", 3, 400),
                 new PricedCat("Cat3", 3, 600),
-                new PricedCat("Cat4", 1, 800),
+                new PricedCat("Cat3", 2, 800),
                 new PricedCat("Cat5", 4, 650)
         );
 
@@ -65,19 +62,22 @@ public class Main {
                 .forEach(System.out::println);
 
         System.out.println("==========MAP==============");
-        cats.stream()
+    /*    cats.stream()
                 .collect(Collectors.toMap(k -> k.getName(), v -> v))
                 //к и v - это один и тот же кот
-                .forEach((k, v) -> System.out.println(k + " " + v));
+                .forEach((k, v) -> System.out.println(k + " " + v));*/
 
         System.out.println("========================");
         LinkedList<PricedCat> collect = cats.stream()
                 .collect(Collectors.toCollection(LinkedList::new));
         System.out.println(collect);
 
-
+        cats.stream()
+                .collect(Collectors.toMap(k -> k.getName(), v -> v, (oldValue, newValue) -> newValue, HashMap::new))
+                .forEach((k, v) -> System.out.println(k + " " + v));
     }
-// Вложенный класс
+
+    // Вложенный класс
     private static class PricedCat {
         private String name;
         private int age;
