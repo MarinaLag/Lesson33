@@ -7,6 +7,7 @@ import lesson_33._04_strream_usege.model.Dog;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Main {
@@ -19,8 +20,8 @@ public class Main {
         );
 
         Stream<Dog> dogStream = dogs.stream()
-                .filter(dog -> dog.getAge()>3)
-                .filter(dog -> dog.getName().length()>=3);
+                .filter(dog -> dog.getAge() >= 3)
+                .filter(dog -> dog.getName().length() >= 3);
 
         dogStream.forEach(System.out::println);
 
@@ -46,9 +47,9 @@ public class Main {
                 .forEach(System.out::println);
 
         System.out.println("===================");
-        Stream <String> dogsObj= dogs.stream().map(Dog::getName);
-        Stream <String> chickenObj= chickens.stream().map(Chicken::getName);
-        Stream.concat(dogsObj,chickenObj).forEach(System.out::println);
+        Stream<String> dogsObj = dogs.stream().map(Dog::getName);
+        Stream<String> chickenObj = chickens.stream().map(Chicken::getName);
+        Stream.concat(dogsObj, chickenObj).forEach(System.out::println);
 
         System.out.println("=====================");
         chickens.stream().distinct()
@@ -60,5 +61,12 @@ public class Main {
                 .limit(2)
                 .forEach(System.out::println);
 
+        List<String> names = Arrays.asList("Alice", "Bob", "Charlie", "David");
+
+        List<String> sortedNames = names.stream()
+                .sorted()
+                .collect(Collectors.toList());
+
+        System.out.println(sortedNames); // prints ["Alice", "Bob", "Charlie", "David"]
     }
 }

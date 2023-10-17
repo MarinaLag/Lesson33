@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 public class Main {
     public static void main(String[] args) {
 
-        Stream<Object> empty = Stream.empty();
+        Stream<Object> empty = Stream.empty(); // пустой стрим
 
         List<Integer> ints = Arrays.asList(1, 2, 3);
 

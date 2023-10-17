@@ -45,14 +45,14 @@ public class Main {
         System.out.println("Amount = " + amount);
 
         int intejer = cats.stream()
-                .filter(it -> it.getAge() > 3)
+                .filter(it -> it.getAge() < 3)
                 .map(it -> it.getPrice())
                 //  reduce(0, (x, y) -> x + y);
                 .reduce(0, Integer::sum);
-        System.out.println("Amount = " + amount);
+        System.out.println("intejer = " + intejer);
 
 
-        System.out.println("=======================================");
+        System.out.println("================List=======================");
         cats.stream()
                 .filter(it -> it.getAge() < 3)
                 .collect(Collectors.toList())
@@ -73,6 +73,7 @@ public class Main {
         System.out.println("========================");
         LinkedList<PricedCat> collect = cats.stream()
                 .collect(Collectors.toCollection(LinkedList::new));
+        System.out.println(collect);
 
 
     }
