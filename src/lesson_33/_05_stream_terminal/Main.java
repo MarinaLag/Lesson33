@@ -67,14 +67,18 @@ public class Main {
                 //к и v - это один и тот же кот
                 .forEach((k, v) -> System.out.println(k + " " + v));*/
 
-        System.out.println("========================");
+        cats.stream()
+                // k и v -это один и тотже кот
+                //(oldValue, newValue) -> newValue - когда придут два одинаковый кота,
+                // бери второго-newValue кота (можно выбрать первого-oldValue)
+                .collect(Collectors.toMap(k -> k.getName(), v -> v, (oldValue, newValue) -> newValue, HashMap::new))
+                .forEach((k, v) -> System.out.println(k + " " + v));
+
+        System.out.println("===========toCollection===============");
         LinkedList<PricedCat> collect = cats.stream()
                 .collect(Collectors.toCollection(LinkedList::new));
         System.out.println(collect);
 
-        cats.stream()
-                .collect(Collectors.toMap(k -> k.getName(), v -> v, (oldValue, newValue) -> newValue, HashMap::new))
-                .forEach((k, v) -> System.out.println(k + " " + v));
     }
 
     // Вложенный класс
