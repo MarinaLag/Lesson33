@@ -12,4 +12,5 @@ public class Cat {
     @NonNull  // для указания поля для конструктора с каким-то параметром
     private int age;
 
+
 }
