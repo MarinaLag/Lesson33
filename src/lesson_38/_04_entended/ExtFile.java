@@ -22,7 +22,7 @@ public class ExtFile implements Externalizable {
     public void writeExternal(ObjectOutput out) throws IOException {
         out.writeObject(firstName);
         out.writeObject(lastName);
-        out.writeObject(encryptString(password));
+        out.writeObject(encryptString(password));//метод который зашифрует пароль
     }
 
     @Override
@@ -32,13 +32,14 @@ public class ExtFile implements Externalizable {
         password = decryptString((String) in.readObject());
     }
 
-    private String encryptString(String data) { //зашифрует
+    private String encryptString(String data) { //зашифрует пароль
         String encryptedData = Base64.getEncoder().encodeToString(data.getBytes());
+        // зашифруй в строку
         System.out.println(encryptedData); //просто для просмотра - return
         return encryptedData;
     }
 
-    private String decryptString(String data) {  //расшифрует
+    private String decryptString(String data) {  //расшифрует пароль
         String decryptedData = new String(Base64.getDecoder().decode(data));
         System.out.println(decryptedData); //просто для просмотра - return
         return decryptedData;

@@ -1,8 +1,6 @@
-package lesson_39._01_trunning.exception;
+package lesson_39._01_training.exception;
 
 import lombok.Getter;
-
-import java.util.StringJoiner;
 
 public class TxtLineException extends Exception{
     @Getter

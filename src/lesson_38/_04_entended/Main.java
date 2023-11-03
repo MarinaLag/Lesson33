@@ -2,7 +2,7 @@ package lesson_38._04_entended;
 
 import java.io.*;
 
-public class Main {
+public class  Main {
     public static final String PATH_TO_FILE = "src/lesson_38/_resources/output.file";
 
     public static void main(String[] args) {
@@ -16,7 +16,7 @@ public class Main {
             oos.writeObject(extFile); //записали
 
             System.out.println("=================");
-            ExtFile fromFile = (ExtFile) ois.readObject();
+            ExtFile fromFile = (ExtFile) ois.readObject();//прочитали
             System.out.println(fromFile);
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();

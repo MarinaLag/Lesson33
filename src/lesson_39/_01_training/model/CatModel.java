@@ -1,4 +1,4 @@
-package lesson_39._01_trunning.model;
+package lesson_39._01_training.model;
 
 import lombok.AllArgsConstructor;
 import lombok.ToString;

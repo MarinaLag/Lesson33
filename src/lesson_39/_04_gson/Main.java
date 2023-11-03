@@ -2,12 +2,10 @@ package lesson_39._04_gson;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import lesson_39._01_trunning.model.CatModel;
-import lesson_39._03_jaxb.model.CatJaxb;
+import lesson_39._01_training.model.CatModel;
 
 import java.io.*;
 import java.lang.reflect.Type;
-import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 public class Main {
@@ -41,5 +39,8 @@ public class Main {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+
+
+
     }
 }

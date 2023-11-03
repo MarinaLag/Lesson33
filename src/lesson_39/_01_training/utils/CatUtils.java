@@ -1,7 +1,7 @@
-package lesson_39._01_trunning.utils;
+package lesson_39._01_training.utils;
 
-import lesson_39._01_trunning.exception.TxtLineException;
-import lesson_39._01_trunning.model.CatModel;
+import lesson_39._01_training.exception.TxtLineException;
+import lesson_39._01_training.model.CatModel;
 import lombok.experimental.UtilityClass;
 
 import java.io.FileInputStream;
@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 @UtilityClass
 public class CatUtils {
-    public static final String PATH_TO_FILE = "src/lesson_39/_01_trunning/resources/save.file";
+    public static final String PATH_TO_FILE = "src/lesson_39/_01_training/resources/save.csv";
 
     public static List<CatModel> extractFromFile() {
         List<CatModel> cats = new ArrayList<>();
